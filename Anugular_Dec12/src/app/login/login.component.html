@@ -1,0 +1,19 @@
+<div class="login-container">  
+    <h2 >Please try to identify yourself </h2>  
+    <mat-card>
+        <form class="loginForm" (ngSubmit)="loginSubmit()">
+            <div class="form-fields">
+                <mat-form-field>
+                    <input matInput name="username" class="username" [formControl]='username' placeholder="Enter your username">
+                    <mat-error>{{validateUserName()}}</mat-error>
+                </mat-form-field>
+                <mat-form-field>
+                    <input type="password" matInput name="password" class="password"  [formControl]='password' placeholder="Enter your password">
+                    <mat-error>{{validatePassword()}}{{checkPasswordLength()}}</mat-error>
+                </mat-form-field>
+                <button mat-flat-button color="primary" [disabled]='username.invalid || password.invalid'>Submit</button>
+            </div>
+        </form>
+    </mat-card>
+    <label style="color:red" name="submitMessage" class="error-message">{{ submitMessage }}</label>
+</div>

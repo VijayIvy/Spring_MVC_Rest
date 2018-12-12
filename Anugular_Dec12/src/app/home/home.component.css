@@ -1,0 +1,94 @@
+.companyName {
+    font-size: 150%;
+}
+
+.mat-toolbar {
+    height: 7vh;
+}
+
+div {
+    overflow: inherit;
+}
+
+.mat-sidenav-container {
+    background-color: lightskyblue;
+    min-height: 93vh !important;
+}
+
+a {
+    text-decoration: none;
+    font-size: 110%;
+    white-space: normal;
+}
+
+button {
+    font-size: 110%;
+    min-width: min-content;
+    color: #3f51b5
+}
+
+.example-icon {
+    padding: 0 14px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.mat-sidenav-content {
+    font-size: 200%;
+    text-align: center;
+}
+
+#customers {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td,
+#customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #3f51b5;
+    color: white;
+}
+
+.search-bar {
+    background-color: #222;
+}
+
+.search-bar * {
+    color: white !important;
+}
+
+.search-bar input {
+    border-bottom-color: white;
+}
+
+.md-errors-spacer {
+    display: none;
+}
+
+h1 {
+    color: #3f51b5
+}
+
+th {
+    font-size: 15px;
+    font-weight: bold;
+}

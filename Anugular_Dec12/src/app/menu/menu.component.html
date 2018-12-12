@@ -1,0 +1,44 @@
+<!--<app-header></app-header>-->
+
+<div>
+  <mat-toolbar color="primary" *ngIf="isLoggedIn$ | async as isLoggedIn">
+    <div fxShow="true" fxHide.gt-sm="true">
+      <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button>
+    </div>
+    
+    <a mat-button class="companyName" routerLink="/">
+      <!--<img src="./assets/images/Nm_Logo.png" alt="image">-->
+      <span>NorthWest Mutual</span>
+    </a>
+    <span class="example-spacer"></span>
+    <div fxShow="true" fxHide.lt-md="true">
+      <a mat-button routerLink="/home">Home</a>
+      <a mat-button routerLink="/dashboard">DashBoard</a>
+      <a mat-button routerLink="/start-page">WorkFlow</a>
+      <!--<a mat-button routerLink="/contact">Contact Us</a>-->
+      <span><button mat-button (click)="logOut()">Logout</button></span>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container fxFlexFill class="example-container">
+    <mat-sidenav color="primary" #sidenav fxLayout="column" mode="over" opened="false" fxHide.gt-sm="true">
+      <div fxLayout="column">
+        <a mat-button routerLink="/home">Home</a>
+        <a mat-button routerLink="/dashboard">DashBoard</a>
+        <a mat-button routerLink="/start-page">WorkFlow</a>
+        <!--<a mat-button routerLink="/contact">Contact Us</a>-->
+        <span><button mat-button (click)="logOut()">Logout</button></span>
+      </div>
+    </mat-sidenav>
+    <mat-sidenav-content fxFlexFill>
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
+
+<div>
+  <app-footer> </app-footer>
+</div>

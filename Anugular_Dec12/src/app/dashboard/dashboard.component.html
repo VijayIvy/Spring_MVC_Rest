@@ -1,0 +1,258 @@
+<div>
+    <h1>NM WorkFlow Details</h1>
+    <div class="workflow-container">
+        <form class="workflowForm" (ngSubmit)="workflowSubmit()">
+            <mat-grid-list cols="4" gutterSize="1px" rowHeight="700">
+                <mat-grid-tile>
+                    <div class="form-fields">
+                        <mat-form-field>
+                            <input matInput name="firstName" class="firstName" [formControl]='firstName' placeholder="Enter Employee Frist Name" >
+                            <mat-error>{{validatefirstName()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput name="lastName" class="lastName" [formControl]='lastName' placeholder="Enter Employee Last Name" >
+                            <mat-error>{{validatelastName()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="emailID" matInput name="ctsEmailId" class="ctsEmailId" [formControl]='ctsEmailId' placeholder="Enter your Email ID" >
+                            <mat-error>{{validateCtsEmailId()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput name="ctsEmpId" class="ctsEmpId" [formControl]='ctsEmpId' placeholder="Enter Employee Id" >
+                            <mat-error>{{validateCtsEmpId()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="ctsJoinDate" placeholder="Choose a CTS Join date">
+                            <mat-datepicker-toggle matSuffix [for]="ctsJoinDate"></mat-datepicker-toggle>
+                            <mat-datepicker #ctsJoinDate></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="nmJoinDate" placeholder="Choose a NM Join date">
+                            <mat-datepicker-toggle matSuffix [for]="nmJoinDate"></mat-datepicker-toggle>
+                            <mat-datepicker #nmJoinDate></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput [matDatepicker]="nmEndDate" placeholder="Choose a NM End date">
+                            <mat-datepicker-toggle matSuffix [for]="nmEndDate"></mat-datepicker-toggle>
+                            <mat-datepicker #nmEndDate></mat-datepicker>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput name="experience" class="experience" [formControl]='experience' placeholder="Enter Employee Experience">
+                            <mat-error>{{validateExperience()}}</mat-error>
+                        </mat-form-field>
+
+                        <mat-form-field>
+                            <input type="onBoardStatus" matInput name="onBoardStatus" class="onBoardStatus" [formControl]='onBoardStatus' placeholder="Enter onBoard Status">
+                            <mat-error>{{validateOnBoardStatus()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="onBoardCoOrdinator" matInput name="onBoardCoOrdinator" class="onBoardCoOrdinator" [formControl]='onBoardCoOrdinator'
+                                placeholder="Enter onBoard Co-Ordinator">
+                                <mat-error>{{validateOnBoardCoOrdinator()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-fields">
+                        <mat-form-field>
+                            <input type="projectName" matInput name="projectName" class="projectName" [formControl]='projectName' placeholder="Enter Project Name">
+                            <mat-error>{{validateProjectName()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="teamName" matInput name="teamName" class="teamName" [formControl]='teamName' placeholder="Enter Team Name">
+                            <mat-error>{{validateTeamName()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="location" class="location" placeholder="Select location" [(ngModel)]="location" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let location of locations" [value]="location">
+                                    {{location.m_sLocationName}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="projectRole" matInput name="projectRole" class="projectRole" [formControl]='projectRole' placeholder="Enter Project Role">
+                            <mat-error>{{validateProjectRole()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="unitDetails" class="unitDetails" placeholder="Select Unit" [(ngModel)]="unitDetails" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let unit of units" [value]="unit">
+                                    {{unit}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="subUnitDetails" class="subUnitDetails" placeholder="Select Sub-Unit" [(ngModel)]="subUnitDetails" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let unit of subUnits" [value]="unit">
+                                    {{unit}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="directorsDetails" class="directorsDetails" placeholder="Select directors" [(ngModel)]="directorsDetails"
+                                required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let director of directors" [value]="director">
+                                    {{director}}
+                                </mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="anchorsDetails" class="anchorsDetails" placeholder="Select anchors" [(ngModel)]="anchorsDetails" required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let anchor of anchors" [value]="anchor">
+                                    {{anchor}}
+                                </mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select name="nmProjectTypesDetails" class="nmProjectTypesDetails" placeholder="Select NM Project Type" [(ngModel)]="nmProjectTypesDetails"
+                                required>
+                                <mat-option>--</mat-option>
+                                <mat-option *ngFor="let projectType of nmProjectTypes" [value]="projectType">
+                                    {{projectType}}
+                                </mat-option>
+                                </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput name="nmSow" class="nmSow" [formControl]='nmSow' placeholder="Enter NM Sow">
+                            <mat-error>{{validateNmSow()}}</mat-error>
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-fields">
+                        <mat-form-field>
+                            <input matInput name="nmLanId" class="nmLanId" [formControl]='nmLanId' placeholder="Enter LAN Id">
+                            <mat-error>{{validateNmLanId()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input matInput name="nmIsManager" class="nmIsManager" [formControl]='nmIsManager' placeholder="Enter NM Manager">
+                            <mat-error>{{validateNmIsManager()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="classification" matInput name="classification" class="classification" [formControl]='classification' placeholder="Enter Classification">
+                            <mat-error>{{validateClassification()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="reason" matInput name="reason" class="reason" [formControl]='reason' placeholder="Enter Reason">
+                            <mat-error>{{validateReason()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="assignTo" matInput name="assignTo" class="assignTo" [formControl]='assignTo' placeholder="Enter assignTo">
+                            <mat-error>{{validateAssignTo()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="nmOnBoardStatus" matInput name="nmOnBoardStatus" class="nmOnBoardStatus" [formControl]='nmOnBoardStatus' placeholder="Enter NM onBoard Status">
+                            <mat-error>{{validateNmOnBoardStatus()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <input type="nmOnBoardCoOrdinator" matInput name="nmOnBoardCoOrdinator" class="nmOnBoardCoOrdinator" [formControl]='nmOnBoardCoOrdinator'
+                                placeholder="Enter NM onBoard Co-Ordinator">
+                                <mat-error>{{validateNmOnBoardCoOrdinator()}}</mat-error>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="buildingAccessRequest" name="buildingAccessRequest" class="buildingAccessRequest" placeholder="Select Building Access Request">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="drugTestException" name="drugTestException" class="drugTestException" placeholder="Select Drug Test Exception">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="mutualCodeOfConduct" name="mutualCodeOfConduct" class="mutualCodeOfConduct" placeholder="Select Mutual Code Of Conduct">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>                        
+                    </div>
+                </mat-grid-tile>
+                <mat-grid-tile>
+                    <div class="form-fields">
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="ndaForm" name="ndaForm" class="ndaForm" placeholder="Select NDA Form">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="newMachineRequest" name="newMachineRequest" class="newMachineRequest" placeholder="Select New Machine Request">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="nmDLUpdate" name="nmDLUpdate" class="nmDLUpdate" placeholder="Select NM DL Update">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="nmDrugTest" name="nmDrugTest" class="nmDrugTest" placeholder="Select NM Drug Test">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="nmDrugTestReRaised" name="nmDrugTestReRaised" class="nmDrugTestReRaised" placeholder="Select NM Drug Test ReRaised">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="nmIntroductionTraining" name="nmIntroductionTraining" class="nmIntroductionTraining" placeholder="Select NM Introduction Training">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="ppmForm" name="ppmForm" class="ppmForm" placeholder="Select PPM Form">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="privacyBasics" name="privacyBasics" class="privacyBasics" placeholder="Select Privacy Basics">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="prodTermId" name="prodTermId" class="prodTermId" placeholder="Select Prod Term Id">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                        <mat-form-field>
+                            <mat-select [(ngModel)]="signOnForm" name="signOnForm" class="signOnForm" placeholder="Select Sign On Form">
+                                <mat-option>None</mat-option>
+                                <mat-option value="Yes">Yes</mat-option>
+                                <mat-option value="No">No</mat-option>
+                            </mat-select>
+                        </mat-form-field>
+                    </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+            <!--<button mat-flat-button color="primary">Submit</button>-->
+            <button mat-flat-button color="primary" [disabled]='firstName.invalid || lastName.invalid || ctsEmpId.invalid || ctsEmailId.invalid' >Submit</button>
+        </form>
+    </div>
+</div>
