@@ -1,0 +1,97 @@
+<Resource auth="Container" driverClassName="com.microsoft.sqlserver.jdbc.SQLServerDriver" maxIdle="4" maxTotal="8" name="jdbc/NMJmlDB" password="Password_10" type="javax.sql.DataSource" url="jdbc:sqlserver://CTSC00636317901:1433;databaseName=NMJML" username="409842"/>
+
+
+<beans:bean name="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+        <beans:property name="jndiName" value="jdbc/NMJmlDB" />
+        <beans:property name="resourceRef" value="true" />
+</beans:bean> 
+
+<beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">  
+      <beans:property name="driverClassName" value="com.microsoft.sqlserver.jdbc.SQLServerDriver" />  
+      <beans:property name="url" value="jdbc:sqlserver://CTSC00636317901:1433;databaseName=NMJML" />  
+      <beans:property name="username" value="409842" />  
+      <beans:property name="password" value="Password_10" />  
+ </beans:bean>
+ 
+ 
+ 
+You have created a service.
+To test this service, you will need to create a client and use it to call the service. You can do this using the svcutil.exe tool from the command line with the following syntax:
+
+svcutil.exe http://onecuatcoresrvs.cognizant.com/Messaging/OneCommunicator/Notification/VAS.svc?wsdl
+You can also access the service description as a single file:
+http://onecuatcoresrvs.cognizant.com/Messaging/OneCommunicator/Notification/VAS.svc?singleWsdl
+
+\\ctsintbmntappa\Northwestern_Mutual\ni-ops\NM-Reverse KT
+\\ctsintbmntappa\Northwestern_Mutual\kokulakrishnan\Mule videos\Muletutorials
+
+
+
+1) Script Update
+2) Config table Entry-
+3) Java Code for getting Drop Down List Query - Role, Assign To, Location, Location ID, Unit, Sub Unit, Project Type
+4) Update WorkFlow - Sysdate
+5) Doc -For Input/Output Both
+6)XML Blob Work
+
+UNIT: EIRC EPS ETM Planning Experience
+
+Metlife
+Ins Internal
+Prudential
+Manulife
+NW Mutual
+
+Need to access to above destination from my local.
+
+{"p_objMailDetails":[{
+       "toMail": "2",
+        "msgSubject": "NmUser",
+        "msgBody": "NmName"
+	}]
+}
+
+1389637
+
+
+Check if node is installed
+	node -v
+Install angular cli and generate a sample angular project
+	npm install -g @angular/cli
+	ng new portal-app
+	
+	
+	ctsc00636317901
+	
+	SDB2, 2nd floor, A wing, ODC 1
+	AssignerUser/Assignerpass
+	
+	javax.xml.bind.UnmarshalException: unexpected element (uri:"", local:"company"). Expected elements are <{}NmDetails>
+	
+	# Install plugins that your project needs:
+$ npm install karma-jasmine karma-chrome-launcher jasmine-core --save-dev
+
+npm install -g npm-check
+npm-check
+
+npm view jasmine version
+
+Go Perform:
+
+Analysed the JMS concept for inter communication message between applications by using ActiveMQ. 2. Developed the basic JMS application by using ActiveMQ and JMS with Spring Boot application POC for inter communication message on both consumer side and sender side application. 
+
+08/10th/2018 to 02/11th/2018
+----------------------------
+Analysed the NMOnboarding(JML Join, merg,left) application requirements and create the NMOnboarding Design Documents.
+And also prepared the ER Diagram on above application for database normalization.
+
+05/11th/2018 to 10/12th/2018
+--------------------------
+Configured a java web application call JML by using Spring MVC, Rest API, Spring JdbcTemplate with layer architecture.
+Configured Spring JdbcTemplate to access data from SQL Server 
+Configured Angular for UI
+Configured Mail Service API for SMTP mail communication
+ 
+ 03/12th/2018 to 07/12th/2018
+ ---------------------------
+ get Angular, gradle, jenkin and microservice traing from organization 
