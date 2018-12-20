@@ -1,0 +1,11 @@
+<p>
+  one works!
+</p>
+
+{{paraentData}}
+
+<button (click)="getParaentData()" mat-raised-button color="primary">getParaentData</button>
+
+<button (click)="passDataToParent()" mat-raised-button color="primary">passDataToParent</button>
+
+<p *ngIf= 'paraentData'> {{paraentData}}</p>

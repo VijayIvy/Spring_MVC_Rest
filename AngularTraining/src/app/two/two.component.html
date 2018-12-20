@@ -1,0 +1,8 @@
+<p>
+  two works!
+</p>
+
+<input type="text" [(ngModel)]='uName' required>
+<!--<<input type="text" [(ngModel)]="uName">-->
+<p *ngIf="recievedData">{{recievedData}}</p>
+<app-one [paraentData]='uName' (childDataEvent)=recieveData($event)> </app-one>
